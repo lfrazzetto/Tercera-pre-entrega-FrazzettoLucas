@@ -1,0 +1,38 @@
+{% extends 'biblioteca/base.html' %}
+
+{% block title %}Buscar Libros{% endblock %}
+
+{% block content %}
+<h2>Buscar Libros</h2>
+
+<form method="get" action="{% url 'buscar_libros' %}">
+    <div class="mb-3">
+        <input type="text" name="q" class="form-control" placeholder="Buscar por título" value="{{ query }}">
+    </div>
+    <button type="submit" class="btn btn-primary">Buscar</button>
+</form>
+
+{% if libros %}
+<h3>Resultados</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Género</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for libro in libros %}
+        <tr>
+            <td>{{ libro.titulo }}</td>
+            <td>{{ libro.autor.nombre }} {{ libro.autor.apellido }}</td>
+            <td>{{ libro.genero.nombre }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No se encontraron libros.</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'biblioteca/base.html' %}
+
+{% block title %}Lista de Autores{% endblock %}
+
+{% block content %}
+<h2>Autores Registrados</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Nacionalidad</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for autor in autores %}
+        <tr>
+            <td>{{ autor.nombre }}</td>
+            <td>{{ autor.apellido }}</td>
+            <td>{{ autor.nacionalidad }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,22 @@
+/* Botones cuadrados */
+.btn-square {
+    width: 100px;
+    /* Ancho fijo */
+    height: 100px;
+    /* Alto fijo */
+    display: flex;
+    justify-content: center;
+    /* Centrar el texto horizontalmente */
+    align-items: center;
+    /* Centrar el texto verticalmente */
+    border-radius: 10px;
+    /* Bordes ligeramente redondeados */
+    font-size: 14px;
+    /* Tamaño del texto */
+    text-align: center;
+    /* Alinear texto */
+    padding: 0;
+    /* Sin padding extra */
+    margin: 5px;
+    /* Espaciado entre botones */
+}

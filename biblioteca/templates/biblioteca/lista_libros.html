@@ -1,0 +1,25 @@
+{% extends 'biblioteca/base.html' %}
+
+{% block title %}Lista de Libros{% endblock %}
+
+{% block content %}
+<h2>Libros Disponibles</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Género</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for libro in libros %}
+        <tr>
+            <td>{{ libro.titulo }}</td>
+            <td>{{ libro.autor.nombre }} {{ libro.autor.apellido }}</td>
+            <td>{{ libro.genero.nombre }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

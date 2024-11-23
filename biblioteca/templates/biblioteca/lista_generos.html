@@ -1,0 +1,21 @@
+{% extends 'biblioteca/base.html' %}
+
+{% block title %}Lista de Géneros{% endblock %}
+
+{% block content %}
+<h2>Géneros Literarios</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Género</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for genero in generos %}
+        <tr>
+            <td>{{ genero.nombre }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
